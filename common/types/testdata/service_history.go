@@ -75,6 +75,8 @@ var (
 	}
 	HistoryGetReplicationMessagesRequest  = AdminGetReplicationMessagesRequest
 	HistoryGetReplicationMessagesResponse = AdminGetReplicationMessagesResponse
+	HistoryCountDLQMessagesRequest        = types.CountDLQMessagesRequest{ForceFetch: true}
+	HistoryCountDLQMessagesResponse       = types.GetHistoryDLQMessageCountResponse{Counts: map[int32]map[string]int64{1: map[string]int64{"A": 10}}}
 	HistoryMergeDLQMessagesRequest        = AdminMergeDLQMessagesRequest
 	HistoryMergeDLQMessagesResponse       = AdminMergeDLQMessagesResponse
 	HistoryNotifyFailoverMarkersRequest   = types.NotifyFailoverMarkersRequest{

@@ -404,6 +404,42 @@ func ToHistoryGetReplicationMessagesResponse(t *historyv1.GetReplicationMessages
 	}
 }
 
+func FromHistoryCountDLQMessagesRequest(t *types.CountDLQMessagesRequest) *historyv1.CountDLQMessagesRequest {
+	if t == nil {
+		return nil
+	}
+	return &historyv1.CountDLQMessagesRequest{
+		ForceFetch: t.ForceFetch,
+	}
+}
+
+func ToHistoryCountDLQMessagesRequest(t *historyv1.CountDLQMessagesRequest) *types.CountDLQMessagesRequest {
+	if t == nil {
+		return nil
+	}
+	return &types.CountDLQMessagesRequest{
+		ForceFetch: t.ForceFetch,
+	}
+}
+
+func FromHistoryCountDLQMessagesResponse(t *types.GetHistoryDLQMessageCountResponse) *historyv1.CountDLQMessagesResponse {
+	if t == nil {
+		return nil
+	}
+	return &historyv1.CountDLQMessagesResponse{
+		Entries: FromHistoryDLQCountEntryMap(t.Entries),
+	}
+}
+
+func ToHistoryCountDLQMessagesResponse(t *historyv1.CountDLQMessagesResponse) *types.GetHistoryDLQMessageCountResponse {
+	if t == nil {
+		return nil
+	}
+	return &types.GetHistoryDLQMessageCountResponse{
+		Entries: ToHistoryDLQCountEntryMap(t.Entries),
+	}
+}
+
 func FromHistoryMergeDLQMessagesRequest(t *types.MergeDLQMessagesRequest) *historyv1.MergeDLQMessagesRequest {
 	if t == nil {
 		return nil
